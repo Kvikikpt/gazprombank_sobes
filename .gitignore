@@ -3,4 +3,3 @@ front/.idea
 back/venv
 back/.idea
 .idea
-back/db.sqlite3
