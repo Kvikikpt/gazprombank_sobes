@@ -45,7 +45,9 @@ export default function AuthPage(props: propsI) {
     // @ts-ignore
     Axios.get("http://127.0.0.1:8000/dates").then((r: any) => {
       setDates(r.data.dates.sort())
-      setSelectedDate(r.data.dates[0])
+      if (r.data.dates.lenght > 0) {
+        setSelectedDate(r.data.dates[0])
+      }
     })
   }, [])
 
