@@ -136,7 +136,8 @@ class IncomeGraphView(APIView):
             date = row.date.strftime("%Y.%m.%d")
             if date not in graphs[row.Organi][row.Curr]:
                 graphs[row.Organi][row.Curr][date] = row.Inflow
-            graphs[row.Organi][row.Curr][date] += row.Inflow
+            else:
+                graphs[row.Organi][row.Curr][date] += row.Inflow
 
         for namespace in graphs:
             for valute in graphs[namespace]:
